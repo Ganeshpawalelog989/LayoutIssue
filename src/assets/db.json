@@ -1,0 +1,72 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "santosh",
+      "lastName": "Teknur",
+      "email": "santosh@gmail.com",
+      "role": "Admin",
+      "Empid": "dasan122",
+      "dob": "12/2/1996",
+      "password": "Santosh@123",
+      "confirmPassword": "Santosh@123"
+    },
+    {
+      "id": 2,
+      "firstName": "meharsh",
+      "lastName": "gohadkar",
+      "email": "meharsh@gmail.com",
+      "role": "physician",
+      "Empid": "dasan123",
+      "dob": "12/2/1998",
+      "password": "Meharsh@123",
+      "confirmPassword": "Meharsh@123"
+    },
+    {
+      "firstName": "Devansh",
+      "lastName": "Gohadkar",
+      "email": "dev@gmail.com",
+      "contact": "67877677",
+      "role": "Nurse",
+      "Empid": "dt1234",
+      "dob": "2021-05-04",
+      "password": "Devansh@123",
+      "confirmPassword": "Devansh@123",
+      "id": 8
+    },
+    {
+      "email": "meharsh@gmail.com",
+      "password": "Meharsh@123",
+      "id": 9
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Deshmukh",
+      "email": "sachin@gmail.com",
+      "contact": "6565665656",
+      "role": "Nurse",
+      "Empid": "123Ct",
+      "dob": "2021-06-08",
+      "password": "Sachin@123",
+      "confirmPassword": "Sachin@123",
+      "id": 10
+    },
+    {
+      "email": "santosh@gmail.com",
+      "password": "Santosh@123",
+      "id": 11
+    },
+    {
+      "firstName": "Anand",
+      "lastName": "K",
+      "email": "anand@gmail.com",
+      "contact": "67457678787",
+      "role": "Physician",
+      "Empid": "3423CT",
+      "dob": "2021-06-08",
+      "password": "Anand@123",
+      "confirmPassword": "Anand@123",
+      "id": 12
+    }
+  ]
+}

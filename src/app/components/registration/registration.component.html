@@ -1,0 +1,160 @@
+
+<div class="class">
+    <div class="card-body">
+        <form [formGroup]="regiForm" (ngSubmit)="onSubmit()">
+       <mat-card>  
+    <!-- Title of an Card -->  
+       <mat-card-title>  
+        <h2 class="title">Registration Form</h2>
+    </mat-card-title>  
+  
+    <!-- Actual content starts from here -->
+    
+    <mat-card-content>  
+                
+            <table > 
+                
+                <div class="example-section">
+                    <label class="label">Title:  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <mat-radio-group >
+                     <mat-radio-button value="1" color="primary">Mr.&nbsp;</mat-radio-button>  
+                     <mat-radio-button value="1" color="primary">Ms.&nbsp;</mat-radio-button>  
+                     <mat-radio-button value="2" color="accent">Mrs.&nbsp;</mat-radio-button>  
+                     <mat-radio-button value="3" color="warn">Dr.&nbsp;</mat-radio-button>      
+                     </mat-radio-group> 
+                   
+                </div>  
+                <tr>
+                <td> 
+                    <div class="form-group">
+                        <label class="label">First Name</label>
+                            <input type="text" formControlName="firstName" required minlength="4"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                
+                            </div> 
+                        </div>
+                        
+                </td>  
+               
+                    <td>  
+                        <div class="form-group">
+                            <label class="label">Last Name</label>
+                            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+                    </td>  
+                  </tr>
+
+                <tr>  
+                    <td >  
+                        
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label class="label">Date of Birth</label>
+                                <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                                <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                    <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                                    <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
+                                </div>
+                            </div> 
+                        </div>  
+                    </td>  
+                 
+                    <td >  
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label class="label">Choose Your Role</label>
+                                <select formControlName="role" class="form-control" name="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
+                                    <optgroup label="Select">
+                                    <option value=""></option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Nurse">Nurse</option>
+                                    <option value="Physician">Physician</option>
+                                </optgroup>
+                                </select>
+                                <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                                    <div *ngIf="f.role.errors.required">Role is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>  
+
+                </tr>  
+              
+                <tr>  
+                    <td >  
+                        <div class="form-group">
+                            <label class="label">Email</label>
+                            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+
+                            </div>
+                        </div>
+                    </td>  &nbsp;   
+                    <td >
+                        <div class="form-row">
+                            <div class="form-group col">
+                              <label class="label">Enter your Contact</label> 
+                            <input type="tel" placeholder="Enter the contact number" formControlName="contact" class="form-control" />
+                        </div>
+                    </div>
+                        </td>  
+                </tr>  
+
+                <tr>  
+                    <td colspan="2">  
+                        <div class="form-group">
+                            <label class="label">Employee Id</label>
+                            <input type="Empid" formControlName="Empid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Empid.errors }" />
+                            <div *ngIf="submitted && f.Empid.errors" class="invalid-feedback">
+                                <div *ngIf="f.Empid.errors.required">Unique Employee ID is required</div>
+                               
+                            </div>
+                        </div>
+                    </td>  
+                </tr>
+                <tr> 
+                    <td colspan="2">  
+                        <div class="form-group">
+                            <label class="label">Password</label>
+                            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Strong Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>  
+                     
+                            </div>
+                        </div>
+                    </td>  
+                </tr>
+                <tr>
+                    <td colspan="2">  
+                        <div class="form-group">
+                            <label class="label">Confirm Password</label>
+                            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                            </div>
+                        </div>
+    
+                </td>  
+            </tr>  
+                <tr>  
+                    <td colspan="2" class="content-center">  
+                    
+                            <button class="btn btn-primary mr-1">Register</button>
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+
+                </tr>
+            </table>      
+        
+    </mat-card-content>  
+</mat-card>
+</form>  
+</div>
+</div>

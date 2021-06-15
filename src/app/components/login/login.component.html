@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="navbar-brand" >
+    <div class="table ">
+      <ul  id="horizontal-list" class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="" class="nav-link" >HOME</a>
+        </li>
+        <li class="nav-item active">
+          <a href="" class="nav-link" >ABOUT US</a>
+        </li>
+        <li class="nav-item active">
+          <a href="" class="nav-link">CONTACT</a>
+        </li>
+       </ul>
+    </div>
+  
+  </div>
+  </nav>
+  
+  
+    <div class="left-half">
+  <mat-card>
+    <mat-card-content >
+      <!-- <h2>CHOOSE USER TYPE</h2>
+    -->
+    <span class="login100-form-title p-b-49">
+      Login
+    </span>
+    <label>CHOOSE YOUR ROLE</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-radio-group style="padding-left: 10px; padding-right: 10px;" variant="contained" color="primary" >
+        <mat-radio-button value="1" >Admin &nbsp;</mat-radio-button>
+        <mat-radio-button value="2">Physician &nbsp;</mat-radio-button>
+        <mat-radio-button value="3">Nurse &nbsp;</mat-radio-button>
+      </mat-radio-group>
+    
+  
+  
+      
+        <form (ngSubmit)="onSubmit()" name="loginForm" [formGroup]="loginForm">
+          <div class="emailInput">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Enter email address" required/>
+              <mat-error *ngIf="!loginForm.controls['email'].valid">  Email is required </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <span>
+              <a class="text-link" class="aLink" routerLink="/auth/forgot-password">Forgot Password?</a>
+            </span>
+            <div class="emailInput">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+              <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>
+                  {{hide ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+              Password is required
+            </mat-error>  
+          </mat-form-field>
+            </div>
+          </div>
+  
+  
+          <div class="checkbox">
+            <input type="checkbox" value="lsRememberMe" id="rememberMe"> 
+            <mat-label>Remember me</mat-label>
+          </div>
+          <div class="example-button-row">
+          <button mat-flat-button color="primary" (click)="onLogin()" >Login</button>
+        </div>
+  
+        <div class="flex-col-c p-t-155"style="padding: 20px;">
+          <span class="txt1 p-b-17">
+            Or New to CT General Hospital
+          </span>
+  
+          <a routerLink="register" class="txt2">
+            Sign Up
+          </a>
+        </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
